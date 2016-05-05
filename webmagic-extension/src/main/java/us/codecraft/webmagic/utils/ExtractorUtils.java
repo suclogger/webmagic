@@ -30,6 +30,9 @@ public class ExtractorUtils {
             case JsonPath:
                 selector = new JsonPathSelector(value);
                 break;
+            case JsoupXpath:
+                selector = new JsoupXpathSelector(value);
+                break;
             default:
                 selector = getXpathSelector(value);
         }

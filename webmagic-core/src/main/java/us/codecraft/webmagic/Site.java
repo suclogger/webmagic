@@ -496,4 +496,8 @@ public class Site {
         return this;
     }
 
+    public void clearCookie() {
+        this.defaultCookies = new HashMap<String, String>();
+    }
+
 }

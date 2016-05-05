@@ -14,7 +14,7 @@ import us.codecraft.webmagic.Task;
  */
 public class SeleniumDownloaderTest {
 
-	private String chromeDriverPath = "/Users/yihua/Downloads/chromedriver";
+	private String chromeDriverPath = "/Users/suclogger/Downloads/chromedriver";
 
 	@Ignore("need chrome driver")
 	@Test
@@ -44,7 +44,7 @@ public class SeleniumDownloaderTest {
 		SeleniumDownloader seleniumDownloader = new SeleniumDownloader(chromeDriverPath);
         seleniumDownloader.setSleepTime(10000);
 		long time1 = System.currentTimeMillis();
-		Page page = seleniumDownloader.download(new Request("http://wenku.baidu.com/view/462933ff04a1b0717fd5ddc2.html"), new Task() {
+		Page page = seleniumDownloader.download(new Request("https://lantouzi.com/bianxianjihua/index?page=1"), new Task() {
 			@Override
 			public String getUUID() {
 				return "huaban.com";
@@ -55,7 +55,7 @@ public class SeleniumDownloaderTest {
 				return Site.me();
 			}
 		});
-		System.out.println(page.getHtml().$("div.inner").replace("<[^<>]+>","").replace("&nsbp;","").all());
+		System.out.println(page.getHtml());
 	}
 
 }

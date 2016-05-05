@@ -3,7 +3,7 @@
     <parent>
         <groupId>us.codecraft</groupId>
         <artifactId>webmagic-parent</artifactId>
-        <version>0.5.4-SNAPSHOT</version>
+        <version>0.5.5-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -79,6 +79,11 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.wanghaomiao</groupId>
+            <artifactId>JsoupXpath</artifactId>
         </dependency>
 
     </dependencies>
