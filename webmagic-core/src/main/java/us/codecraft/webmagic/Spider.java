@@ -416,7 +416,7 @@ public class Spider implements Runnable, Task {
             onError(request);
             return;
         }
-        if(errorDetector!= null && errorDetector.detect(page.getRawText())) {
+        if(errorDetector!= null && !page.isNeedCycleRetry() && errorDetector.detect(page.getRawText())) {
             page.addTargetRequest(request);
             page.setNeedCycleRetry(true);
             site.getCookieProvider().changeCookie();

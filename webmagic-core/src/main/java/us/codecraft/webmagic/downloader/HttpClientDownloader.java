@@ -1,9 +1,5 @@
 package us.codecraft.webmagic.downloader;
 
-import cn.wanghaomiao.xpath.exception.NoSuchAxisException;
-import cn.wanghaomiao.xpath.exception.NoSuchFunctionException;
-import cn.wanghaomiao.xpath.exception.XpathSyntaxErrorException;
-import cn.wanghaomiao.xpath.model.JXDocument;
 import com.google.common.collect.Sets;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
@@ -28,14 +24,15 @@ import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Task;
-import us.codecraft.webmagic.exception.CookieDieException;
 import us.codecraft.webmagic.selector.PlainText;
 import us.codecraft.webmagic.utils.HttpConstant;
 import us.codecraft.webmagic.utils.UrlUtils;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 
 /**
