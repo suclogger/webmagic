@@ -4,7 +4,7 @@ import us.codecraft.webmagic.Page;
 
 /**
  * @author code4crafter@gmail.com
- * @date 14-4-5
+ * date 14-4-5
  */
 public interface SubPageProcessor extends RequestMatcher {
 
@@ -13,7 +13,7 @@ public interface SubPageProcessor extends RequestMatcher {
 	 *
 	 * @param page page
 	 *
-	 * @return whether continue to match
+	 * return whether continue to match
 	 */
 	public MatchOther processPage(Page page);
 

@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * @author code4crafter@gmail.com
- * @date 14-4-4
+ * date 14-4-4
  */
 public class ModelPageProcessorTest {
 

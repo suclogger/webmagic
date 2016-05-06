@@ -17,7 +17,7 @@ public @interface Formatter {
     /**
      * Set formatter params.
      *
-     * @return formatter params
+     * return formatter params
      */
     String[] value();
 
@@ -26,13 +26,13 @@ public @interface Formatter {
      * It is not necessary to be set because we can detect the class by class of field,
      * unless you use a collection as a field. <br>
      *
-     * @return the class of field
+     * return the class of field
      */
     Class subClazz() default String.class;
 
     /**
      * If there are more than one formatter for a class, just specify the implement.
-     * @return implement
+     * return implement
      */
     Class<? extends TypeFormatter> formatter() default TypeFormatter.class;
 

@@ -63,7 +63,7 @@ public class SeleniumDownloader implements Downloader, Closeable {
 	 * set sleep time to wait until load success
 	 *
 	 * @param sleepTime sleepTime
-	 * @return this
+	 * return this
 	 */
 	public SeleniumDownloader setSleepTime(int sleepTime) {
 		this.sleepTime = sleepTime;

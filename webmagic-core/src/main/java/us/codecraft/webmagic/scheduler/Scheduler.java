@@ -26,7 +26,7 @@ public interface Scheduler {
      * get an url to crawl
      *
      * @param task the task of spider
-     * @return the url to crawl
+     * return the url to crawl
      */
     public Request poll(Task task);
 

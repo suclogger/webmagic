@@ -14,7 +14,7 @@ public interface SubPipeline extends RequestMatcher {
      *
      * @param resultItems resultItems
      * @param task task
-     * @return whether continue to match
+     * return whether continue to match
      */
     public MatchOther processResult(ResultItems resultItems, Task task);
 

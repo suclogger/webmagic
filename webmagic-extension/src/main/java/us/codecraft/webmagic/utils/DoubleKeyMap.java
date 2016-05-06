@@ -42,7 +42,7 @@ public class DoubleKeyMap<K1, K2, V> extends MultiKeyMapBase {
 
     /**
      * @param key key
-     * @return map
+     * return map
      */
     public Map<K2, V> get(K1 key) {
         return map.get(key);
@@ -51,7 +51,7 @@ public class DoubleKeyMap<K1, K2, V> extends MultiKeyMapBase {
     /**
      * @param key1 key1
      * @param key2 key2
-     * @return value
+     * return value
      */
     public V get(K1 key1, K2 key2) {
         if (get(key1) == null) {
@@ -64,7 +64,7 @@ public class DoubleKeyMap<K1, K2, V> extends MultiKeyMapBase {
     /**
      * @param key1 key1
      * @param submap submap
-     * @return value
+     * return value
      */
     public V put(K1 key1, Map<K2, V> submap) {
         return put(key1, submap);
@@ -74,7 +74,7 @@ public class DoubleKeyMap<K1, K2, V> extends MultiKeyMapBase {
      * @param key1 key1
      * @param key2 key2
      * @param value value
-     * @return value
+     * return value
      */
     public synchronized V put(K1 key1, K2 key2, V value) {
         if (map.get(key1) == null) {
@@ -87,7 +87,7 @@ public class DoubleKeyMap<K1, K2, V> extends MultiKeyMapBase {
     /**
      * @param key1 key1
      * @param key2 key2
-     * @return value
+     * return value
      */
     public synchronized V remove(K1 key1, K2 key2) {
         if (get(key1) == null) {
@@ -102,7 +102,7 @@ public class DoubleKeyMap<K1, K2, V> extends MultiKeyMapBase {
 
     /**
      * @param key1 key1
-     * @return
+     * return
      */
     public Map<K2, V> remove(K1 key1) {
         Map<K2, V> remove = map.remove(key1);

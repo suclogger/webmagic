@@ -51,7 +51,7 @@ public class ResultItems {
      * Whether to skip the result.<br>
      * Result which is skipped will not be processed by Pipeline.
      *
-     * @return whether to skip the result
+     * return whether to skip the result
      */
     public boolean isSkip() {
         return skip;
@@ -63,7 +63,7 @@ public class ResultItems {
      * Result which is skipped will not be processed by Pipeline.
      *
      * @param skip whether to skip the result
-     * @return this
+     * return this
      */
     public ResultItems setSkip(boolean skip) {
         this.skip = skip;

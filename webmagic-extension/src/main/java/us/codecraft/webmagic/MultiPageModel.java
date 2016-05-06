@@ -16,14 +16,14 @@ public interface MultiPageModel {
     /**
      * Page key is the identifier for the object.
      *
-     * @return page key
+     * return page key
      */
     public String getPageKey();
 
     /**
      * page is the identifier of a page in pages for one object.
      *
-     * @return page
+     * return page
      */
     public String getPage();
 
@@ -31,7 +31,7 @@ public interface MultiPageModel {
      * other pages to be extracted.<br>
      * It is used to judge whether an object contains more than one page, and whether the pages of the object are all extracted.
      *
-     * @return other pages
+     * return other pages
      */
     public Collection<String> getOtherPages();
 
@@ -39,7 +39,7 @@ public interface MultiPageModel {
      * Combine multiPageModels to a whole object.
      *
      * @param multiPageModel multiPageModel
-     * @return multiPageModel combined
+     * return multiPageModel combined
      */
     public MultiPageModel combine(MultiPageModel multiPageModel);
 

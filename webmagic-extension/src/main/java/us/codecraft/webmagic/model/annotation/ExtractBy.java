@@ -17,7 +17,7 @@ public @interface ExtractBy {
     /**
      * Extractor expression, support XPath, CSS Selector and regex.
      *
-     * @return extractor expression
+     * return extractor expression
      */
     String value();
 
@@ -29,7 +29,7 @@ public @interface ExtractBy {
     /**
      * Extractor type, support XPath, CSS Selector and regex.
      *
-     * @return extractor type
+     * return extractor type
      */
     Type type() default Type.XPath;
 
@@ -37,7 +37,7 @@ public @interface ExtractBy {
      * Define whether the field can be null.<br>
      * If set to 'true' and the extractor get no result, the entire class will be discarded. <br>
      *
-     * @return whether the field can be null
+     * return whether the field can be null
      */
     boolean notNull() default false;
 
@@ -59,7 +59,7 @@ public @interface ExtractBy {
      * The source for extracting. <br>
      * It works only if you already added 'ExtractBy' to Class. <br>
      *
-     * @return the source for extracting
+     * return the source for extracting
      */
     Source source() default Source.SelectedHtml;
 
@@ -68,8 +68,8 @@ public @interface ExtractBy {
      * When set to 'true', the extractor return a list of string (so you should define the field as List). <br>
      *
      * Deprecated since 0.4.2. This option is determined automatically by the class of field.
-     * @deprecated since 0.4.2
-     * @return whether the extractor return more than one result
+     * deprecated since 0.4.2
+     * return whether the extractor return more than one result
      */
     boolean multi() default false;
 

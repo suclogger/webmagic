@@ -69,11 +69,15 @@ class ModelPageProcessor implements PageProcessor {
         for (String link : links) {
             for (Pattern targetUrlPattern : urlPatterns) {
                 Matcher matcher = targetUrlPattern.matcher(link);
-                if (matcher.find()) {
+                if (matcher.find() && checkExist(link)) {
                     page.addTargetRequest(new Request(matcher.group(1)));
                 }
             }
         }
+    }
+
+    private boolean checkExist(String link) {
+        return site.getExistDetector() != null && !site.getExistDetector().detect(link);
     }
 
     protected void postProcessPageModel(Class clazz, Object object) {

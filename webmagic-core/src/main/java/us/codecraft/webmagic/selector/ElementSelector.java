@@ -17,7 +17,7 @@ public interface ElementSelector {
      * If there are more than one result, only the first will be chosen.
      *
      * @param element element
-     * @return result
+     * return result
      */
     public String select(Element element);
 
@@ -25,7 +25,7 @@ public interface ElementSelector {
      * Extract all results in text.<br>
      *
      * @param element element
-     * @return results
+     * return results
      */
     public List<String> selectList(Element element);
 

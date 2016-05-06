@@ -88,6 +88,14 @@ public class HttpClientGenerator {
                 cookieStore.addCookie(cookie);
             }
         }
+        if(site.getCookieProvider() != null) {
+            Map<String,String> provided = site.getCookieProvider().getCookie();
+            for (String key : provided.keySet()) {
+                BasicClientCookie cookie = new BasicClientCookie(key, provided.get(key));
+                cookie.setDomain(site.getDomain());
+                cookieStore.addCookie(cookie);
+            }
+        }
         httpClientBuilder.setDefaultCookieStore(cookieStore);
     }
 

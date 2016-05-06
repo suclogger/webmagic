@@ -29,7 +29,7 @@ public interface PageProcessor {
     /**
      * get the site settings
      *
-     * @return site
+     * return site
      * @see Site
      */
     public Site getSite();

@@ -38,7 +38,7 @@
         <connection>scm:git:git@github.com:code4craft/webmagic.git</connection>
         <developerConnection>scm:git:git@github.com:code4craft/webmagic.git</developerConnection>
         <url>git@github.com:code4craft/webmagic.git</url>
-      <tag>webmagic-parent-0.5.4-SNAPSHOT</tag>
+      <tag>webmagic-parent-0.5.5-SNAPSHOT</tag>
   </scm>
     <licenses>
         <license>

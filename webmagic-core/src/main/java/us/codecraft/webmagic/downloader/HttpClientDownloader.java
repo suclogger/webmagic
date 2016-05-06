@@ -97,21 +97,6 @@ public class HttpClientDownloader extends AbstractDownloader {
             request.putExtra(Request.STATUS_CODE, statusCode);
             if (statusAccept(acceptStatCode, statusCode)) {
                 Page page = handleResponse(request, charset, httpResponse, task);
-                JXDocument document = new JXDocument(page.getRawText());
-                String xpath ="//h2[text()='请重新登录']/text()";
-                List<Object> result = new ArrayList<Object>();
-                try {
-                    result = document.sel(xpath);
-                } catch (NoSuchAxisException e) {
-                    e.printStackTrace();
-                } catch (NoSuchFunctionException e) {
-                    e.printStackTrace();
-                } catch (XpathSyntaxErrorException e) {
-                    e.printStackTrace();
-                }
-                if(result.size() > 0) {
-                    throw new CookieDieException("cookie die");
-                }
                 onSuccess(request);
                 return page;
             } else {
@@ -125,17 +110,6 @@ public class HttpClientDownloader extends AbstractDownloader {
             }
             onError(request);
             return null;
-        } catch (CookieDieException e) {
-            if(new Date().getTime() % 2 == 0) {
-                site.clearCookie();
-                site.addCookie("U","155795_b27c112cd2f9b0fb43cf519f69f25ae5");
-                site.addCookie("SERVERID","e42a4a351a5db05308c97c707f01ee54|1462411391|1462411302");
-            } else {
-                site.clearCookie();
-                site.addCookie("U","155794_cf55c1d592f7caf520a38d97899bb3ec");
-                site.addCookie("SERVERID","799965c5c63e4c392773526b82f3c6a4|1462418738|1462418722");
-            }
-            return addToCycleRetry(request, site);
         } finally {
         	request.putExtra(Request.STATUS_CODE, statusCode);
             try {

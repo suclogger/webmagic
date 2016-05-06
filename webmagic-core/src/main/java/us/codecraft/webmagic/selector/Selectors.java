@@ -35,7 +35,7 @@ public abstract class Selectors {
     /**
      * @see #xpath(String)
      * @param expr expr
-     * @return new selector
+     * return new selector
      */
     public static XpathSelector xsoup(String expr) {
         return new XpathSelector(expr);

@@ -54,7 +54,7 @@ public class Request implements Serializable {
      * @see us.codecraft.webmagic.scheduler.PriorityScheduler
      *
      * @param priority priority
-     * @return this
+     * return this
      */
     @Experimental
     public Request setPriority(long priority) {
@@ -112,7 +112,7 @@ public class Request implements Serializable {
 
     /**
      * The http method of the request. Get for default.
-     * @return httpMethod
+     * return httpMethod
      * @see us.codecraft.webmagic.utils.HttpConstant.Method
      * @since 0.5.0
      */

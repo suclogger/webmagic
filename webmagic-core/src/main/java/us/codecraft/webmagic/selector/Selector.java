@@ -15,7 +15,7 @@ public interface Selector {
      * If there are more than one result, only the first will be chosen.
      *
      * @param text text
-     * @return result
+     * return result
      */
     public String select(String text);
 
@@ -23,7 +23,7 @@ public interface Selector {
      * Extract all results in text.<br>
      *
      * @param text text
-     * @return results
+     * return results
      */
     public List<String> selectList(String text);
 

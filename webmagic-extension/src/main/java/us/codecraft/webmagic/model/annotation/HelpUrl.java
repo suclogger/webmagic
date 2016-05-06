@@ -21,7 +21,7 @@ public @interface HelpUrl {
      *      "." stand for literal character "." instead of "any character". <br>
      *      "*" stand for any legal character for url in 0-n length ([^"'#]*) instead of "any length". <br>
      *
-     * @return the url patterns for class
+     * return the url patterns for class
      */
     String[] value();
 
@@ -30,7 +30,7 @@ public @interface HelpUrl {
      * Only support XPath.<br>
      * When sourceRegion is set, the urls will be extracted only from the region instead of entire content. <br>
      *
-     * @return the region for url extracting
+     * return the region for url extracting
      */
     String sourceRegion() default "";
 }

@@ -52,7 +52,7 @@ if (!document.createElement('canvas').getContext) {
   /**
    * This funtion is assigned to the <canvas> elements as element.getContext().
    * @this {HTMLElement}
-   * @return {CanvasRenderingContext2D_}
+   * return {CanvasRenderingContext2D_}
    */
   function getContext() {
     return this.context_ ||
@@ -75,7 +75,7 @@ if (!document.createElement('canvas').getContext) {
    *     is called
    * @param {*} var_args Rest arguments that will be used as the initial
    *     arguments when the function is called
-   * @return {Function} A new function that has bound this
+   * return {Function} A new function that has bound this
    */
   function bind(f, obj, var_args) {
     var a = slice.call(arguments, 2);
@@ -138,7 +138,7 @@ if (!document.createElement('canvas').getContext) {
      * loaded but if you are creating elements using createElement you need to
      * make sure this is called on the element.
      * @param {HTMLElement} el The canvas element to initialize.
-     * @return {HTMLElement} the element that was created.
+     * return {HTMLElement} the element that was created.
      */
     initElement: function(el) {
       if (!el.getContext) {

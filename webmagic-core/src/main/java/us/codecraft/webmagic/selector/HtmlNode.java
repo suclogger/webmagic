@@ -60,7 +60,7 @@ public class HtmlNode extends AbstractSelectable {
      * select elements
      *
      * @param elementSelector elementSelector
-     * @return result
+     * return result
      */
     protected Selectable selectElements(BaseElementSelector elementSelector) {
         ListIterator<Element> elementIterator = getElements().listIterator();

@@ -66,7 +66,7 @@ public class Page {
     /**
      * get html content of page
      *
-     * @return html
+     * return html
      */
     public Html getHtml() {
         if (html == null) {
@@ -78,7 +78,7 @@ public class Page {
     /**
      * get json content of page
      *
-     * @return json
+     * return json
      * @since 0.5.0
      */
     public Json getJson() {
@@ -90,7 +90,7 @@ public class Page {
 
     /**
      * @param html html
-     * @deprecated since 0.4.0
+     * deprecated since 0.4.0
      * The html is parse just when first time of calling {@link #getHtml()}, so use {@link #setRawText(String)} instead.
      */
     public void setHtml(Html html) {
@@ -165,7 +165,7 @@ public class Page {
     /**
      * get url of current page
      *
-     * @return url of current page
+     * return url of current page
      */
     public Selectable getUrl() {
         return url;
@@ -178,7 +178,7 @@ public class Page {
     /**
      * get request of current page
      *
-     * @return request
+     * return request
      */
     public Request getRequest() {
         return request;

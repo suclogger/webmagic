@@ -2,6 +2,7 @@ package us.codecraft.webmagic.model;
 
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.detector.ErrorDetector;
 import us.codecraft.webmagic.pipeline.CollectorPipeline;
 import us.codecraft.webmagic.pipeline.PageModelPipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
@@ -97,4 +98,8 @@ public class OOSpider<T> extends Spider {
         return this;
     }
 
+    public OOSpider setErrorDetector(ErrorDetector errorDetector) {
+        super.setErrorDetector(errorDetector);
+        return this;
+    }
 }

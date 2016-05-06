@@ -14,7 +14,7 @@ public interface RequestMatcher {
      *
      * @param page page
      *
-     * @return whether matches
+     * return whether matches
      */
     public boolean match(Request page);
 

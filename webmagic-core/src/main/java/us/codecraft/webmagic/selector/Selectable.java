@@ -14,7 +14,7 @@ public interface Selectable {
      * select list with xpath
      *
      * @param xpath xpath
-     * @return new Selectable after extract
+     * return new Selectable after extract
      */
     public Selectable xpath(String xpath);
 
@@ -22,7 +22,7 @@ public interface Selectable {
      * select list with css selector
      *
      * @param selector css selector expression
-     * @return new Selectable after extract
+     * return new Selectable after extract
      */
     public Selectable $(String selector);
 
@@ -31,7 +31,7 @@ public interface Selectable {
      *
      * @param selector css selector expression
      * @param attrName attribute name of css selector
-     * @return new Selectable after extract
+     * return new Selectable after extract
      */
     public Selectable $(String selector, String attrName);
 
@@ -39,7 +39,7 @@ public interface Selectable {
      * select list with css selector
      *
      * @param selector css selector expression
-     * @return new Selectable after extract
+     * return new Selectable after extract
      */
     public Selectable css(String selector);
 
@@ -48,21 +48,21 @@ public interface Selectable {
      *
      * @param selector css selector expression
      * @param attrName attribute name of css selector
-     * @return new Selectable after extract
+     * return new Selectable after extract
      */
     public Selectable css(String selector, String attrName);
 
     /**
      * select smart content with ReadAbility algorithm
      *
-     * @return content
+     * return content
      */
     public Selectable smartContent();
 
     /**
      * select all links
      *
-     * @return all links
+     * return all links
      */
     public Selectable links();
 
@@ -70,7 +70,7 @@ public interface Selectable {
      * select list with regex, default group is group 1
      *
      * @param regex regex
-     * @return new Selectable after extract
+     * return new Selectable after extract
      */
     public Selectable regex(String regex);
 
@@ -79,7 +79,7 @@ public interface Selectable {
      *
      * @param regex regex
      * @param group group
-     * @return new Selectable after extract
+     * return new Selectable after extract
      */
     public Selectable regex(String regex, int group);
 
@@ -88,35 +88,35 @@ public interface Selectable {
      *
      * @param regex regex
      * @param replacement replacement
-     * @return new Selectable after extract
+     * return new Selectable after extract
      */
     public Selectable replace(String regex, String replacement);
 
     /**
      * single string result
      *
-     * @return single string result
+     * return single string result
      */
     public String toString();
 
     /**
      * single string result
      *
-     * @return single string result
+     * return single string result
      */
     public String get();
 
     /**
      * if result exist for select
      *
-     * @return true if result exist
+     * return true if result exist
      */
     public boolean match();
 
     /**
      * multi string result
      *
-     * @return multi string result
+     * return multi string result
      */
     public List<String> all();
 
@@ -124,7 +124,7 @@ public interface Selectable {
      * extract by JSON Path expression
      *
      * @param jsonPath jsonPath
-     * @return result
+     * return result
      */
     public Selectable jsonPath(String jsonPath);
 
@@ -132,7 +132,7 @@ public interface Selectable {
      * extract by custom selector
      *
      * @param selector selector
-     * @return result
+     * return result
      */
     public Selectable select(Selector selector);
 
@@ -140,13 +140,13 @@ public interface Selectable {
      * extract by custom selector
      *
      * @param selector selector
-     * @return result
+     * return result
      */
     public Selectable selectList(Selector selector);
 
     /**
      * get all nodes
-     * @return result
+     * return result
      */
     public List<Selectable> nodes();
 }

@@ -13,14 +13,14 @@ public interface Task {
     /**
      * unique id for a task.
      *
-     * @return uuid
+     * return uuid
      */
     public String getUUID();
 
     /**
      * site of a task
      *
-     * @return site
+     * return site
      */
     public Site getSite();
 

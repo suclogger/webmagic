@@ -27,7 +27,7 @@ public class UrlUtils {
      *
      * @param url url
      * @param refer refer
-     * @return canonicalizeUrl
+     * return canonicalizeUrl
      */
     public static String canonicalizeUrl(String url, String refer) {
         URL base;
@@ -52,7 +52,7 @@ public class UrlUtils {
     /**
      *
      * @param url url
-     * @return new url
+     * return new url
      */
     public static String encodeIllegalCharacterInUrl(String url) {
         //TODO more charator support

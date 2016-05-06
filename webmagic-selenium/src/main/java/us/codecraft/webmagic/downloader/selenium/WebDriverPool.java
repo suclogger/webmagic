@@ -142,7 +142,7 @@ class WebDriverPool {
 	 * 
 	 * @author bob.li.0718@gmail.com
 	 * @param urlString urlString
-	 * @return true means yes, otherwise no.
+	 * return true means yes, otherwise no.
 	 */
 	private boolean isUrl(String urlString) {
 		try {
@@ -174,7 +174,7 @@ class WebDriverPool {
 
 	/**
 	 * 
-	 * @return
+	 * return
 	 * @throws InterruptedException
 	 */
 	public WebDriver get() throws InterruptedException {
