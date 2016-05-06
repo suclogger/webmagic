@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <groupId>org.sonatype.oss</groupId>
-        <artifactId>oss-parent</artifactId>
-        <version>7</version>
-    </parent>
     <groupId>us.codecraft</groupId>
     <version>0.5.5-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
@@ -34,12 +29,6 @@
             <email>ligang.yao@answers.com</email>
         </developer>
     </developers>
-    <scm>
-        <connection>scm:git:git@github.com:code4craft/webmagic.git</connection>
-        <developerConnection>scm:git:git@github.com:code4craft/webmagic.git</developerConnection>
-        <url>git@github.com:code4craft/webmagic.git</url>
-      <tag>webmagic-parent-0.5.5-SNAPSHOT</tag>
-  </scm>
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -249,7 +238,7 @@
 
     <profiles>
         <profile>
-            <id>release</id>
+            <id>snapshot</id>
             <build>
                 <plugins>
                     <!-- Source -->
@@ -283,6 +272,10 @@
                 </plugins>
             </build>
             <distributionManagement>
+                <repository>
+                    <id>releases</id>
+                    <url>http://yijiqingchen.com:9000/nexus/content/repositories/releases</url>
+                </repository>
                 <snapshotRepository>
                     <id>snapshots</id>
                     <url>http://yijiqingchen.com:9000/nexus/content/repositories/snapshots</url>
