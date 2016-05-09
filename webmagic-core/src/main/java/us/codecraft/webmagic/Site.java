@@ -5,6 +5,7 @@ import com.google.common.collect.Table;
 import org.apache.http.HttpHost;
 
 import us.codecraft.webmagic.cookie.CookieProvider;
+import us.codecraft.webmagic.detector.ErrorDetector;
 import us.codecraft.webmagic.detector.ExistDetector;
 import us.codecraft.webmagic.proxy.ProxyPool;
 import us.codecraft.webmagic.utils.UrlUtils;
@@ -60,6 +61,8 @@ public class Site {
     private boolean useGzip = true;
 
     private ExistDetector existDetector;
+
+    private ErrorDetector errorDetector;
 
     /**
      * @see us.codecraft.webmagic.utils.HttpConstant.Header
@@ -507,6 +510,10 @@ public class Site {
         return this;
     }
 
+    public CookieProvider getCookieProvider() {
+        return this.cookieProvider;
+    }
+
     public ExistDetector getExistDetector() {
         return this.existDetector;
     }
@@ -516,8 +523,12 @@ public class Site {
         return this;
     }
 
-    public CookieProvider getCookieProvider() {
-        return this.cookieProvider;
+    public ErrorDetector getErrorDetector() {
+        return errorDetector;
+    }
+
+    public void setErrorDetector(ErrorDetector errorDetector) {
+        this.errorDetector = errorDetector;
     }
 
     public void clearCookie() {

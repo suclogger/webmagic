@@ -110,8 +110,6 @@ public class Spider implements Runnable, Task {
 
     private int emptySleepTime = 30000;
 
-    private ErrorDetector errorDetector;
-
     /**
      * create a spider with pageProcessor.
      *
@@ -416,7 +414,8 @@ public class Spider implements Runnable, Task {
             onError(request);
             return;
         }
-        if(errorDetector!= null && !page.isNeedCycleRetry() && errorDetector.detect(page.getRawText())) {
+        // check error page
+        if(site.getErrorDetector()!= null && !page.isNeedCycleRetry() && site.getErrorDetector().detect(page.getRawText())) {
             page.addTargetRequest(request);
             page.setNeedCycleRetry(true);
             site.getCookieProvider().changeCookie();
@@ -736,11 +735,6 @@ public class Spider implements Runnable, Task {
 
     public Scheduler getScheduler() {
         return scheduler;
-    }
-
-    public Spider setErrorDetector(ErrorDetector d) {
-        this.errorDetector = d;
-        return this;
     }
 
     /**
