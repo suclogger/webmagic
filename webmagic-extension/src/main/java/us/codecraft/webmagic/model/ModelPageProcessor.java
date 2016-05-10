@@ -74,7 +74,7 @@ class ModelPageProcessor implements PageProcessor {
             logger.debug("find link {} " ,link);
             for (Pattern targetUrlPattern : urlPatterns) {
                 Matcher matcher = targetUrlPattern.matcher(link);
-                if (matcher.find() && checkExist(link)) {
+                if (matcher.find() && !checkExist(link)) {
                     page.addTargetRequest(new Request(matcher.group(1)));
                 }
             }
@@ -83,7 +83,11 @@ class ModelPageProcessor implements PageProcessor {
 
     private boolean checkExist(String link) {
         logger.debug("check exist for {}", link);
-        return site.getExistDetector() != null && !site.getExistDetector().detect(link);
+        if(site.getErrorDetector() == null) {
+            return false;
+        } else {
+            return site.getExistDetector().detect(link);
+        }
     }
 
     protected void postProcessPageModel(Class clazz, Object object) {
