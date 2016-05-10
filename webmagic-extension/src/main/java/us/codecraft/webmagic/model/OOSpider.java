@@ -2,7 +2,6 @@ package us.codecraft.webmagic.model;
 
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.detector.ErrorDetector;
 import us.codecraft.webmagic.pipeline.CollectorPipeline;
 import us.codecraft.webmagic.pipeline.PageModelPipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
@@ -61,9 +60,9 @@ public class OOSpider<T> extends Spider {
     /**
      * create a spider
      *
-     * @param site site
+     * @param site              site
      * @param pageModelPipeline pageModelPipeline
-     * @param pageModels pageModels
+     * @param pageModels        pageModels
      */
     public OOSpider(Site site, PageModelPipeline pageModelPipeline, Class... pageModels) {
         this(ModelPageProcessor.create(site, pageModels));
@@ -98,8 +97,4 @@ public class OOSpider<T> extends Spider {
         return this;
     }
 
-    public OOSpider setErrorDetector(ErrorDetector errorDetector) {
-        super.setErrorDetector(errorDetector);
-        return this;
-    }
 }

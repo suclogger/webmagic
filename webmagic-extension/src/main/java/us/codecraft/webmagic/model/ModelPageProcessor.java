@@ -1,5 +1,7 @@
 package us.codecraft.webmagic.model;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Site;
@@ -18,6 +20,8 @@ import java.util.regex.Pattern;
  * @since 0.2.0
  */
 class ModelPageProcessor implements PageProcessor {
+
+    Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private List<PageModelExtractor> pageModelExtractorList = new ArrayList<PageModelExtractor>();
 
@@ -67,6 +71,7 @@ class ModelPageProcessor implements PageProcessor {
             links = page.getHtml().selectList(urlRegionSelector).links().all();
         }
         for (String link : links) {
+            logger.debug("find link {} " ,link);
             for (Pattern targetUrlPattern : urlPatterns) {
                 Matcher matcher = targetUrlPattern.matcher(link);
                 if (matcher.find() && checkExist(link)) {
@@ -77,6 +82,7 @@ class ModelPageProcessor implements PageProcessor {
     }
 
     private boolean checkExist(String link) {
+        logger.debug("check exist for {}", link);
         return site.getExistDetector() != null && !site.getExistDetector().detect(link);
     }
 
