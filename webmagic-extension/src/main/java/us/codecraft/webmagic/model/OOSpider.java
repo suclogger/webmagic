@@ -4,6 +4,7 @@ import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.pipeline.CollectorPipeline;
 import us.codecraft.webmagic.pipeline.PageModelPipeline;
+import us.codecraft.webmagic.pipeline.Pipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 
 import java.util.ArrayList;
@@ -74,6 +75,11 @@ public class OOSpider<T> extends Spider {
             }
             pageModelClasses.add(pageModel);
         }
+    }
+
+    public Spider addPipLine(Pipeline pipeline) {
+        super.addPipeline(pipeline);
+        return this;
     }
 
     @Override

@@ -5,8 +5,6 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.http.HttpHost;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import us.codecraft.webmagic.cookie.CookieProvider;
-import us.codecraft.webmagic.detector.ErrorDetector;
 import us.codecraft.webmagic.downloader.Downloader;
 import us.codecraft.webmagic.downloader.HttpClientDownloader;
 import us.codecraft.webmagic.pipeline.CollectorPipeline;
