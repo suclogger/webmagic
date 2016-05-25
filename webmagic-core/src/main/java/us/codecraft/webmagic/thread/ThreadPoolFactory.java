@@ -10,8 +10,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class ThreadPoolFactory {
     private static volatile ExecutorService thredPool = null;
-    private static final int CORE_SIZE = 20;
-    private static final int MAX_SIZE = 200;
+    private static final int CORE_SIZE = 50;
+    private static final int MAX_SIZE = 2000;
     private static final int KEEP_ALIVE_TIME = 5;
 
     public static ExecutorService getThreadPool() {
@@ -22,7 +22,7 @@ public class ThreadPoolFactory {
             if (null != thredPool) {
                 return thredPool;
             }
-            thredPool = new ThreadPoolExecutor(CORE_SIZE, MAX_SIZE, KEEP_ALIVE_TIME, TimeUnit.MINUTES, new LinkedBlockingQueue<Runnable>());
+            thredPool = new ThreadPoolExecutor(CORE_SIZE, MAX_SIZE, KEEP_ALIVE_TIME, TimeUnit.MINUTES, new LinkedBlockingQueue<Runnable>(),new ThreadPoolExecutor.AbortPolicy());
             return thredPool;
         }
     }

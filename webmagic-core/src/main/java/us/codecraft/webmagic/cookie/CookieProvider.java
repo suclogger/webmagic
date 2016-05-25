@@ -8,4 +8,5 @@ import java.util.Map;
 public interface CookieProvider {
     Map<String,String> getCookie();
     void changeCookie();
+    void changeCookie(boolean valid);
 }
