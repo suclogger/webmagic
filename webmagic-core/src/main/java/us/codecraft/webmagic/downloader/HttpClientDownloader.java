@@ -67,7 +67,7 @@ public class HttpClientDownloader extends AbstractDownloader {
             }
         } else {
             if(site.getCookieProvider() != null) {
-                httpClient = httpClientGenerator.getClient(site);
+                httpClient = httpClientGenerator.getClient(site, proxy);
                 httpClients.put(domain, httpClient);
             }
         }

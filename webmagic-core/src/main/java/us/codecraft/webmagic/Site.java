@@ -4,6 +4,9 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 import org.apache.http.HttpHost;
 
+import us.codecraft.webmagic.cookie.CookieProvider;
+import us.codecraft.webmagic.detector.ErrorDetector;
+import us.codecraft.webmagic.detector.ExistDetector;
 import us.codecraft.webmagic.proxy.Proxy;
 import us.codecraft.webmagic.proxy.SimpleProxyPool;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -59,6 +62,12 @@ public class Site {
     private ProxyPool httpProxyPool;
 
     private boolean useGzip = true;
+
+    private CookieProvider cookieProvider;
+
+    private ExistDetector existDetector;
+
+    private ErrorDetector errorDetector;
 
     /**
      * @see us.codecraft.webmagic.utils.HttpConstant.Header
@@ -516,4 +525,27 @@ public class Site {
         httpProxyPool.returnProxy(proxy,statusCode);
     }
 
+    public CookieProvider getCookieProvider() {
+        return cookieProvider;
+    }
+
+    public void setCookieProvider(CookieProvider cookieProvider) {
+        this.cookieProvider = cookieProvider;
+    }
+
+    public ExistDetector getExistDetector() {
+        return existDetector;
+    }
+
+    public void setExistDetector(ExistDetector existDetector) {
+        this.existDetector = existDetector;
+    }
+
+    public ErrorDetector getErrorDetector() {
+        return errorDetector;
+    }
+
+    public void setErrorDetector(ErrorDetector errorDetector) {
+        this.errorDetector = errorDetector;
+    }
 }
