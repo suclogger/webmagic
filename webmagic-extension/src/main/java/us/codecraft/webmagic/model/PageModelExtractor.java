@@ -228,7 +228,8 @@ class PageModelExtractor {
         annotation = clazz.getAnnotation(ExtractBy.class);
         if (annotation != null) {
             ExtractBy extractBy = (ExtractBy) annotation;
-            objectExtractor = new Extractor(new XpathSelector(extractBy.value()), Extractor.Source.Html, extractBy.notNull(), extractBy.multi());
+            Selector selector = ExtractorUtils.getSelector(extractBy);
+            objectExtractor = new Extractor(selector, Extractor.Source.Html, extractBy.notNull(), extractBy.multi());
         }
     }
 
