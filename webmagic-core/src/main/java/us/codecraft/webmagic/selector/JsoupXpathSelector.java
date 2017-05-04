@@ -22,6 +22,12 @@ public class JsoupXpathSelector implements Selector {
 
     @Override
     public String select(String text) {
+        if(text.startsWith("<tr")) {
+            StringBuilder sb =  new StringBuilder("<table>");
+            sb.append(text);
+            sb.append("</table>");
+            text = sb.toString();
+        }
         JXDocument document  = new JXDocument(text);
         try {
             List<Object> res = document.sel(xPath);
