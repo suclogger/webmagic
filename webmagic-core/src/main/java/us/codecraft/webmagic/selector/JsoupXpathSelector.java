@@ -5,6 +5,7 @@ import cn.wanghaomiao.xpath.exception.NoSuchFunctionException;
 import cn.wanghaomiao.xpath.exception.XpathSyntaxErrorException;
 import cn.wanghaomiao.xpath.model.JXDocument;
 import org.apache.commons.lang.StringUtils;
+import org.jsoup.parser.Parser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +23,12 @@ public class JsoupXpathSelector implements Selector {
 
     @Override
     public String select(String text) {
-        if(text.startsWith("<tr")) {
-            StringBuilder sb =  new StringBuilder("<table>");
-            sb.append(text);
-            sb.append("</table>");
-            text = sb.toString();
+        JXDocument document=  null;
+        if(isXmlDom(text))  {
+            document = new JXDocument(text, Parser.xmlParser());
+        } else {
+            document  = new JXDocument(text);
         }
-        JXDocument document  = new JXDocument(text);
         try {
             List<Object> res = document.sel(xPath);
             return StringUtils.join(res,",");
@@ -40,6 +40,13 @@ public class JsoupXpathSelector implements Selector {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private boolean isXmlDom(String text) {
+        if(text.startsWith("<tr")) {
+            return true;
+        }
+        return false;
     }
 
     @Override
